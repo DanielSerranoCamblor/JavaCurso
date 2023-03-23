@@ -1,1 +1,18 @@
-
+pipeline 
+{
+    agent any
+    stages
+    {
+        stage("Lectura Calculadora")
+        {
+            steps
+            {
+                script
+                {
+                    def data = readFile(file: "C:\\Program Files\\Jenkins\\Salida.txt")
+                    println("\n" + data)
+                }
+            }
+        }
+    }
+}
