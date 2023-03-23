@@ -1,0 +1,6 @@
+valor1 = 30
+ valor2 = 2
+ suma = 32
+ resta = 28
+ multiplicacion = 60
+ division = 15
