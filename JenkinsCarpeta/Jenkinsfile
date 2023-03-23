@@ -26,6 +26,7 @@ pipeline
                     writeFile(file: "C:\\Program Files\\Jenkins\\Salida.txt", text: "valor1 = " + a + "\n valor2 = " + b + "\n suma = " + suma + "\n resta = " + resta + "\n multiplicacion = " + multiplicacion + "\n division = " + division)
                     
                     def data = readFile(file: "C:\\Program Files\\Jenkins\\Salida.txt")
+                    println("\n" + data)
                 }
             }
         }
