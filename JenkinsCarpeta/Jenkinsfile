@@ -23,7 +23,7 @@ pipeline
                     println "division = " + division
                     println " Hola desde la carpeta de Jenkins"
                     
-                    writeFile(file: "Salida.txt", text: "valor1 = " + a + "\n valor2 = " + b + "\n suma = " + suma + "\n resta = " + resta + "\n multiplicacion = " + multiplicacion + "\n division = " + division +)
+                    writeFile(file: "Salida.txt", text: "valor1 = " + a + "\n valor2 = " + b + "\n suma = " + suma + "\n resta = " + resta + "\n multiplicacion = " + multiplicacion + "\n division = " + division)
                     
                     def data = readFile(file: "Salida.txt")
                 }
