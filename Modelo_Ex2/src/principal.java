@@ -21,6 +21,9 @@ import java.time.Instant;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.awt.Color;
@@ -80,36 +83,69 @@ public class principal {
 			//temperatura_berlin.remove()
 			hmBerlin.put("temperature", (float)(temperatura_berlin.getJSONObject("current_weather").getFloat("temperature")));
 			hmMadrid.put("temperature", (float)(temperatura_madrid.getJSONObject("current_weather").getFloat("temperature")));
-
-			System.out.println("La temperatura en Berlin es:" + hmBerlin.get("temperature"));
-			System.out.println("La temperatura en Madrid es:" + hmMadrid.get("temperature"));
 			
 			sc.close();	
 			sc1.close();	
-			// Condiciones de madrid
+			// Condiciones de madrid y berlin
 			float tempBerlin = (float)(temperatura_berlin.getJSONObject("current_weather").getFloat("temperature"));
 			float tempMadrid = (float)(temperatura_madrid.getJSONObject("current_weather").getFloat("temperature"));
-			if(tempBerlin<= 15) 
+			String AccionMadrid;
+			String AccionBerlin;
+			if(tempBerlin>= 20) 
 			{
-				System.out.println("Algo sucedía en Berlin");
+				AccionBerlin ="Se realizaran tareas de Producción.";
 			}
 			else
-				System.out.println("Algo distinto");
-			if(tempMadrid<= 15) 
+				AccionBerlin ="Se realizaran tareas de Mantenimiento.";
+			if(tempMadrid>= 15) 
 			{
-				System.out.println("Algo sucedía en Madrid");
+				AccionMadrid ="Se realizaran tareas de Producción y no de sembrado.";
 			}
 			else
-				System.out.println("Algo distinto sucedía");
-
-			//Declaracion de la estructura y normalización.
-			/*
-			p.setJSON(informacionBerlin.toString());
-			p.setJSON(informacionMadrid.toString());
-			System.out.println("La temperatura en Berlin es:" + p.getObjectHashMap("temperature"));
-			System.out.println("La temperatura en Berlin es:" + p.getObjectHashMap("temperature"));
-			*/
+				AccionMadrid =" Se realizaran tareas de sembrado.";
 			
+
+			System.out.println("Temp Madrid: " + tempMadrid + "\n" + AccionMadrid + "\n" + 
+					"Temp Madrid: " + tempBerlin + "\n" + AccionBerlin);
+			
+			String ruta = "C:\\Users\\dserranoc\\eclipse-workspace\\Modelo_Ex2\\src\\recomendación_diaria.txt";	
+			String contenido = "Temp Madrid: " + tempMadrid + "\n" + AccionMadrid + "\n" + 
+					"Temp Madrid: " + tempBerlin + "\n" + AccionBerlin;
+			File archivo = new File(ruta);
+			// Si el archivo no existe es creado.
+			if (!archivo.exists())
+				{
+					archivo.createNewFile();
+				}
+			FileWriter fw = new FileWriter(archivo);
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write(contenido);
+			bw.close();
+			/*//Diseño visual. 
+			URL urlImg = new URL((String) p.getObjectHashMap("icon"));
+			Image image = ImageIO.read(urlImg);
+			ImageIcon imageIcon = new ImageIcon(image);
+			//JFrame es la ventana. Jframe es la clase que nos permite crear ventanas.
+			JFrame jFrame = new JFrame();
+			jFrame.setBackground(Color.blue);
+			System.out.println(jFrame.getBackground());
+			JLabel jLabel = new JLabel();
+			JLabel date = new JLabel(p.getObjectHashMap("date").toString());
+			JLabel s1 = new JLabel(p.getObjectHashMap("weather").toString());
+			//Diseño
+			date.setSize(30,30);
+			s1.setSize(10,10);
+			jFrame.setLayout(new FlowLayout());
+			jFrame.setSize(1000+10, 300+40);
+			jLabel.setIcon(imageIcon);
+			jFrame.add(jLabel);
+			jFrame.add(date);
+			jFrame.add(s1);
+			jFrame.setIconImage(image);
+			jFrame.setVisible(true);
+			jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);	*/
+			
+
 		}
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
@@ -117,22 +153,3 @@ public class principal {
 		}	
 	}
 }
-/*
-//Normalización y declaración de los elementos a tomar de la información. 
-class parseJSON
-{
-	private JSONObject jObject;
-	private HashMap<String,Object> hm = new HashMap<>();
-	
-	public Object getObjectHashMap(String key)
-	{
-		return hm.get(key);
-	}
-	
-	public void setJSON(String response)
-	{
-		jObject = new JSONObject(response);
-		hm.put("temperature", (float)(jObject.getJSONObject("current_weather").getInt("temperature")));
-	}
-}
-*/
