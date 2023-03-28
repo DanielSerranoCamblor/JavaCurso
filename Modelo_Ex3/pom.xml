@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Modelo_Ex3</groupId>
+  <artifactId>Modelo_Ex3</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+<!-- https://mvnrepository.com/artifact/br.com.tecsinapse/tecsinapse-data-io -->
+<dependency>
+    <groupId>br.com.tecsinapse</groupId>
+    <artifactId>tecsinapse-data-io</artifactId>
+    <version>3.1.8</version>
+</dependency>
+
+  	<dependency>
+  		<groupId>Clase7AOP</groupId>
+  		<artifactId>Clase7AOP</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>17</release>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
