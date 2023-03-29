@@ -1,0 +1,9 @@
+Nombre: BUENOS_AIRES     ValorFinalPorVuelo: 1000     Dias de diferencia: 28     Segmentación: Es Rentable     
+Nombre: BUENOS_AIRES     ValorFinalPorVuelo: 5000     Dias de diferencia: 28     Segmentación: Es Rentable     
+Nombre: BARCELONA     ValorFinalPorVuelo: 250     Dias de diferencia: 27     Segmentación: Es Rentable     
+Nombre: BARCELONA     ValorFinalPorVuelo: 500     Dias de diferencia: 27     Segmentación: No es Rentable     
+Nombre: NEW_YORK     ValorFinalPorVuelo: 7500     Dias de diferencia: 28     Segmentación: Es Rentable     
+Nombre: NEW_YORK     ValorFinalPorVuelo: 15000     Dias de diferencia: 28     Segmentación: Es Rentable     
+Nombre: TOKYO     ValorFinalPorVuelo: 15000     Dias de diferencia: 28     Segmentación: Es Rentable     
+Nombre: TOKYO     ValorFinalPorVuelo: 20000     Dias de diferencia: 28     Segmentación: Es Rentable     
+Suma de los valores Parciales: 4825
